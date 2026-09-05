@@ -3,19 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Berton Leach | Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #252525;
+            background-color: #f4f5f7;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 8%;
+            background-color: #111111;
+        }
+
+        .nav-name {
+            color: white;
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            min-height: 75vh;
+            padding: 100px 8%;
+            color: white;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0, 0, 0, 0.97),
+                    rgba(95, 0, 0, 0.93)
+                );
+        }
+
+        .header-content {
+            max-width: 800px;
+        }
+
+        header h1 {
+            margin-bottom: 18px;
+            font-size: 4rem;
+            line-height: 1.1;
+        }
+
+        header h2 {
+            margin-bottom: 8px;
+            color: #ff4d4d;
+            font-size: 1.6rem;
+        }
+
+        header p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 6px 8px 6px 0;
+            padding: 12px 22px;
+            border-radius: 6px;
+            background-color: #cc0000;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background-color: #a50000;
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            border: 2px solid white;
+            background-color: transparent;
+        }
+
+        .button-outline:hover {
+            background-color: white;
+            color: #111111;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 24px;
+        }
+
+        section {
+            margin: 45px 0;
+            padding: 40px;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        section h3 {
+            display: inline-block;
+            margin-bottom: 22px;
+            padding-bottom: 6px;
+            border-bottom: 4px solid #cc0000;
+            font-size: 2rem;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .skills-list li {
+            padding: 9px 16px;
+            border-radius: 20px;
+            background-color: #eeeeee;
+            color: #333333;
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            padding: 25px;
+            border-top: 5px solid #cc0000;
+            border-radius: 8px;
+            background-color: #f7f7f7;
+            transition: 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-card h4 {
+            margin-bottom: 12px;
+            color: #990000;
+            font-size: 1.3rem;
+        }
+
+        .project-label {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            background-color: #222222;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Contact */
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 12px;
+        }
+
+        .contact-list a {
+            color: #a50000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 25px;
+            background-color: #111111;
+            color: white;
+            text-align: center;
+        }
+
+        /* Mobile Layout */
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 14px;
+            }
+
+            header {
+                min-height: 65vh;
+                padding: 70px 25px;
+            }
+
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            header h2 {
+                font-size: 1.3rem;
+            }
+
+            section {
+                padding: 28px 22px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <nav>
+        <div class="nav-name">Berton Leach</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <header>
-        <h1>Berton Leach</h1>
-        <h2>Operations and Supply Chain Management Student</h2>
-        <p>University of Utah</p>
+        <div class="header-content">
+            <h1>Berton Leach</h1>
+            <h2>Operations and Supply Chain Management Student</h2>
+            <p>University of Utah</p>
+
+            <a class="button" href="#projects">
+                View My Projects
+            </a>
+
+            <a
+                class="button button-outline"
+                href="https://www.linkedin.com/in/bertonleach"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Connect on LinkedIn
+            </a>
+        </div>
     </header>
 
     <main>
-        <section>
+        <section id="about">
             <h3>About Me</h3>
+
             <p>
                 I am an Operations and Supply Chain Management student at the
                 University of Utah with an interest in operations management,
@@ -34,9 +317,10 @@
             </p>
         </section>
 
-        <section>
+        <section id="skills">
             <h3>Skills</h3>
-            <ul>
+
+            <ul class="skills-list">
                 <li>HTML</li>
                 <li>Git</li>
                 <li>GitHub</li>
@@ -50,61 +334,566 @@
             </ul>
         </section>
 
-        <section>
+        <section id="projects">
             <h3>Projects</h3>
 
-            <h4>AI Business Analysis</h4>
-            <p>
-                Analyze business information and develop recommendations using
-                artificial intelligence tools.
-            </p>
+            <div class="project-grid">
+                <article class="project-card">
+                    <h4>GE Business Consulting Project</h4>
 
-            <h4>Data Visualization</h4>
-            <p>
-                Create a visual dashboard that communicates business data and trends.
-            </p>
+                    <p>
+                        Collaborated with a student consulting team to analyze
+                        General Electric's operations across major business
+                        sectors, including healthcare, aerospace, and energy.
+                        We researched GE's position within each sector,
+                        identified opportunities for improvement, and developed
+                        strategic recommendations intended to strengthen the
+                        company's overall business performance.
+                    </p>
 
-            <h4>Web Development</h4>
-            <p>
-                Design and build a responsive website using HTML and CSS.
-            </p>
+                    <span class="project-label">MGT 3030</span>
+                </article>
 
-            <h4>Process Improvement</h4>
-            <p>
-                Redesign a business workflow using information systems and
-                AI-assisted analysis.
-            </p>
+                <article class="project-card">
+                    <h4>Fastenal Sourcing Process Capstone</h4>
+
+                    <p>
+                        Identified an opportunity to improve Fastenal's sourcing
+                        process by giving branch employees clearer access to
+                        sourcing knowledge, tools, and procedures. I created a
+                        standardized digital resource with practical guidance
+                        and video tutorials designed to improve request quality,
+                        employee efficiency, customer outcomes, and speed to
+                        revenue.
+                    </p>
+
+                    <span class="project-label">Fastenal Internship</span>
+                </article>
+
+                <article class="project-card">
+                    <h4>Utah Watershed Research Project</h4>
+
+                    <p>
+                        Collected water samples from several sources throughout
+                        Utah and measured their levels of E. coli bacteria. The
+                        project examined differences in water quality and
+                        explored how population growth and human development can
+                        affect watersheds and access to clean water resources.
+                    </p>
+
+                    <span class="project-label">BIOL 2015</span>
+                </article>
+
+                <article class="project-card">
+                    <h4>Fairlife Milk Ethics Project</h4>
+
+                    <p>
+                        Researched ethical concerns involving Fairlife milk and
+                        examined the broader effects of factory farming within
+                        the dairy industry. The project considered animal
+                        welfare, corporate responsibility, consumer trust, and
+                        how large-scale agricultural practices can affect the
+                        ethical reputation of a company and its products.
+                    </p>
+
+                    <span class="project-label">MGT 2030</span>
+                </article>
+            </div>
         </section>
 
-        <section>
+        <section id="resume">
             <h3>Resume</h3>
+
             <p>Resume coming soon.</p>
         </section>
 
-        <section>
+        <section id="contact">
             <h3>Contact</h3>
 
-            <p>
-                Email:
-                <a href="mailto:u1453848@umail.utah.edu">
-                    u1453848@umail.utah.edu
-                </a>
-            </p>
+            <ul class="contact-list">
+                <li>
+                    <strong>Email:</strong>
+                    <a href="mailto:u1453848@umail.utah.edu">
+                        u1453848@umail.utah.edu
+                    </a>
+                </li>
 
-            <p>
-                LinkedIn:
-                <a href="https://www.linkedin.com/in/bertonleach" target="_blank">
-                    View my LinkedIn profile
-                </a>
-            </p>
+                <li>
+                    <strong>LinkedIn:</strong>
+                    <a
+                        href="https://www.linkedin.com/in/bertonleach"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        linkedin.com/in/bertonleach
+                    </a>
+                </li>
 
-            <p>
-                GitHub:
-                <a href="https://github.com/BertonL" target="_blank">
-                    View my GitHub profile
-                </a>
-            </p>
+                <li>
+                    <strong>GitHub:</strong>
+                    <a
+                        href="https://github.com/BertonL"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        github.com/BertonL
+                    </a>
+                </li>
+            </ul>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Berton Leach. All rights reserved.</p>
+    </footer>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Berton Leach | Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #252525;
+            background-color: #f4f5f7;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 8%;
+            background-color: #111111;
+        }
+
+        .nav-name {
+            color: white;
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            min-height: 75vh;
+            padding: 100px 8%;
+            color: white;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0, 0, 0, 0.97),
+                    rgba(95, 0, 0, 0.93)
+                );
+        }
+
+        .header-content {
+            max-width: 800px;
+        }
+
+        header h1 {
+            margin-bottom: 18px;
+            font-size: 4rem;
+            line-height: 1.1;
+        }
+
+        header h2 {
+            margin-bottom: 8px;
+            color: #ff4d4d;
+            font-size: 1.6rem;
+        }
+
+        header p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 6px 8px 6px 0;
+            padding: 12px 22px;
+            border-radius: 6px;
+            background-color: #cc0000;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background-color: #a50000;
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            border: 2px solid white;
+            background-color: transparent;
+        }
+
+        .button-outline:hover {
+            background-color: white;
+            color: #111111;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 24px;
+        }
+
+        section {
+            margin: 45px 0;
+            padding: 40px;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        section h3 {
+            display: inline-block;
+            margin-bottom: 22px;
+            padding-bottom: 6px;
+            border-bottom: 4px solid #cc0000;
+            font-size: 2rem;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .skills-list li {
+            padding: 9px 16px;
+            border-radius: 20px;
+            background-color: #eeeeee;
+            color: #333333;
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            padding: 25px;
+            border-top: 5px solid #cc0000;
+            border-radius: 8px;
+            background-color: #f7f7f7;
+            transition: 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-card h4 {
+            margin-bottom: 12px;
+            color: #990000;
+            font-size: 1.3rem;
+        }
+
+        .project-label {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            background-color: #222222;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Contact */
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 12px;
+        }
+
+        .contact-list a {
+            color: #a50000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 25px;
+            background-color: #111111;
+            color: white;
+            text-align: center;
+        }
+
+        /* Mobile Layout */
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 14px;
+            }
+
+            header {
+                min-height: 65vh;
+                padding: 70px 25px;
+            }
+
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            header h2 {
+                font-size: 1.3rem;
+            }
+
+            section {
+                padding: 28px 22px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-name">Berton Leach</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <h1>Berton Leach</h1>
+            <h2>Operations and Supply Chain Management Student</h2>
+            <p>University of Utah</p>
+
+            <a class="button" href="#projects">
+                View My Projects
+            </a>
+
+            <a
+                class="button button-outline"
+                href="https://www.linkedin.com/in/bertonleach"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Connect on LinkedIn
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h3>About Me</h3>
+
+            <p>
+                I am an Operations and Supply Chain Management student at the
+                University of Utah with an interest in operations management,
+                process improvement, and business strategy. My professional
+                experience in retail leadership and industrial supply has helped
+                me understand how effective systems, data, and standardized
+                processes can improve employee performance and customer outcomes.
+                I am especially interested in how artificial intelligence can
+                support business analysis, automate routine tasks, improve
+                decision-making, and identify opportunities for greater
+                efficiency. I also want to continue developing my technical
+                abilities in web development, data analytics, information
+                systems, and Microsoft Excel. My long-term goal is to combine
+                business knowledge with technology to improve organizational
+                processes and help teams operate more effectively.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h3>Skills</h3>
+
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>Microsoft Excel</li>
+                <li>Data Analytics</li>
+                <li>Business Process Improvement</li>
+                <li>Operations Management</li>
+                <li>Supply Chain Management</li>
+                <li>AI Prompt Engineering</li>
+                <li>Public Speaking</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h3>Projects</h3>
+
+            <div class="project-grid">
+                <article class="project-card">
+                    <h4>GE Business Consulting Project</h4>
+
+                    <p>
+                        Collaborated with a student consulting team to analyze
+                        General Electric's operations across major business
+                        sectors, including healthcare, aerospace, and energy.
+                        We researched GE's position within each sector,
+                        identified opportunities for improvement, and developed
+                        strategic recommendations intended to strengthen the
+                        company's overall business performance.
+                    </p>
+
+                    <span class="project-label">MGT 3030</span>
+                </article>
+
+                <article class="project-card">
+                    <h4>Fastenal Sourcing Process Capstone</h4>
+
+                    <p>
+                        Identified an opportunity to improve Fastenal's sourcing
+                        process by giving branch employees clearer access to
+                        sourcing knowledge, tools, and procedures. I created a
+                        standardized digital resource with practical guidance
+                        and video tutorials designed to improve request quality,
+                        employee efficiency, customer outcomes, and speed to
+                        revenue.
+                    </p>
+
+                    <span class="project-label">Fastenal Internship</span>
+                </article>
+
+                <article class="project-card">
+                    <h4>Utah Watershed Research Project</h4>
+
+                    <p>
+                        Collected water samples from several sources throughout
+                        Utah and measured their levels of E. coli bacteria. The
+                        project examined differences in water quality and
+                        explored how population growth and human development can
+                        affect watersheds and access to clean water resources.
+                    </p>
+
+                    <span class="project-label">BIOL 2015</span>
+                </article>
+
+                <article class="project-card">
+                    <h4>Fairlife Milk Ethics Project</h4>
+
+                    <p>
+                        Researched ethical concerns involving Fairlife milk and
+                        examined the broader effects of factory farming within
+                        the dairy industry. The project considered animal
+                        welfare, corporate responsibility, consumer trust, and
+                        how large-scale agricultural practices can affect the
+                        ethical reputation of a company and its products.
+                    </p>
+
+                    <span class="project-label">MGT 2030</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h3>Resume</h3>
+
+            <p>Resume coming soon.</p>
+        </section>
+
+        <section id="contact">
+            <h3>Contact</h3>
+
+            <ul class="contact-list">
+                <li>
+                    <strong>Email:</strong>
+                    <a href="mailto:u1453848@umail.utah.edu">
+                        u1453848@umail.utah.edu
+                    </a>
+                </li>
+
+                <li>
+                    <strong>LinkedIn:</strong>
+                    <a
+                        href="https://www.linkedin.com/in/bertonleach"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        linkedin.com/in/bertonleach
+                    </a>
+                </li>
+
+                <li>
+                    <strong>GitHub:</strong>
+                    <a
+                        href="https://github.com/BertonL"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        github.com/BertonL
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Berton Leach. All rights reserved.</p>
+    </footer>
 </body>
 </html>
